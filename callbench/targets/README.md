@@ -1,4 +1,4 @@
-# `targets/` — the agent being tested
+# `targets/` - the agent being tested
 
 A **target** is anything that follows this 2-method contract (`base.py`):
 

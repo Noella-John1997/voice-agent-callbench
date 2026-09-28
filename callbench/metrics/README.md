@@ -1,4 +1,4 @@
-# `metrics/` — scoring the calls
+# `metrics/` - scoring the calls
 
 `scoring.py` contains:
 
@@ -11,9 +11,9 @@
 
 ## Checks per call
 
-- `outcome_correct` — did the call end the expected way?
-- `fields_correct` — (verified calls only) do all extracted values match the facts? Compared case- and punctuation-insensitively.
-- `latency_ok` — p95 latency within `max_p95_latency_ms`.
-- `no_loop` — finished before `max_turns`.
+- `outcome_correct` - did the call end the expected way?
+- `fields_correct` - (verified calls only) do all extracted values match the facts? Compared case- and punctuation-insensitively.
+- `latency_ok` - p95 latency within `max_p95_latency_ms`.
+- `no_loop` - finished before `max_turns`.
 
 A call **passes** only if all checks pass.

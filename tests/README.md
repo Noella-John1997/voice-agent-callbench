@@ -1,4 +1,4 @@
-# `tests/` — automated tests
+# `tests/` - automated tests
 
 Run everything with:
 

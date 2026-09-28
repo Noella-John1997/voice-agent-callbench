@@ -1,4 +1,4 @@
-# `web/` — the browser dashboard
+# `web/` - the browser dashboard
 
 `app.py` builds a FastAPI app (`create_app()`), started with `callbench web`.
 

@@ -17,7 +17,7 @@ def _progress(r) -> None:
 
 def cmd_run(args: argparse.Namespace) -> int:
     scenario = load_scenario(args.scenario)
-    print(f"Scenario: {scenario.id} — {scenario.description}")
+    print(f"Scenario: {scenario.id} - {scenario.description}")
     results = run_suite(scenario, target=args.target, seed=args.seed,
                         use_llm_personas=args.llm_personas, progress=_progress)
     summary = summarize(results)

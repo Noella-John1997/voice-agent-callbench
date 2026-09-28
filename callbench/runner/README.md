@@ -1,11 +1,11 @@
-# `runner/` — running calls
+# `runner/` - running calls
 
 ## `simulator.py` → `simulate_call()`
 
 Plays **one** call turn by turn:
 
 1. Persona says its opening line ("Hello?" or a voicemail greeting).
-2. The line goes through `ASRNoise` — the agent receives what STT "heard".
+2. The line goes through `ASRNoise` - the agent receives what STT "heard".
 3. Agent replies; `LatencyModel` computes how long the caller waited.
 4. Maybe a **barge-in**: the caller interrupts and only hears the first half of the reply.
 5. Persona answers → back to step 2.

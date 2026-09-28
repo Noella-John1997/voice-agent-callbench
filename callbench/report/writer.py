@@ -45,10 +45,10 @@ def write_reports(results: list[CallResult], out_dir: str | Path, title: str,
             if t.latency_ms is not None:
                 extra += f'<div class="meta">{t.latency_ms:.0f} ms{" · barge-in" if t.barge_in else ""}{" · " + t.action if t.action and t.action != "continue" else ""}</div>'
             lines.append(f'<div class="t {t.speaker}"><b>{who}:</b> {html.escape(t.text)}{extra}</div>')
-        checks = " ".join(f'{k} {"✔" if v else "✘"}' for k, v in r.checks.items())
+        checks = " · ".join(f'{k}: {"ok" if v else "FAIL"}' for k, v in r.checks.items())
         call_blocks.append(
             f'<details><summary>{_badge(r.passed)} #{i+1} <b>{html.escape(r.persona)}</b> ({r.language}) '
-            f'— expected <i>{r.expected.outcome}</i>, got <i>{r.actual_outcome}</i> · p95 {r.latency_p95_ms:.0f} ms · WER {r.wer:.0%}</summary>'
+            f'- expected <i>{r.expected.outcome}</i>, got <i>{r.actual_outcome}</i> · p95 {r.latency_p95_ms:.0f} ms · WER {r.wer:.0%}</summary>'
             f'<div class="checks">{checks}</div>'
             f'<div class="notes">{html.escape("; ".join(r.notes))}</div>'
             f'{"".join(lines)}</details>')

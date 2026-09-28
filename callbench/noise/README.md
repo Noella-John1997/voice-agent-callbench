@@ -1,6 +1,6 @@
-# `noise/` — making the call realistically messy
+# `noise/` - making the call realistically messy
 
-## `asr_noise.py` — fake speech-to-text mistakes
+## `asr_noise.py` - fake speech-to-text mistakes
 
 Phone audio is 8 kHz and noisy, so STT engines mishear people. `ASRNoise(level)` copies common errors:
 
@@ -10,7 +10,7 @@ Phone audio is 8 kHz and noisy, so STT engines mishear people. `ASRNoise(level)`
 
 `level` goes from `0.0` (perfect) to `1.0` (terrible line). The persona's `accent_noise` setting controls it.
 
-## `latency.py` — how long the caller waits
+## `latency.py` - how long the caller waits
 
 The delay a caller feels is:
 

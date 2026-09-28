@@ -1,4 +1,4 @@
-# `scenarios/` — test suites
+# `scenarios/` - test suites
 
 A scenario file lists the callers to simulate and what a good agent should do with each.
 
@@ -6,12 +6,12 @@ A scenario file lists the callers to simulate and what a good agent should do wi
 
 | Field | Meaning | Default |
 | --- | --- | --- |
-| `id` | Name used in reports | — |
-| `description` | Free text | — |
+| `id` | Name used in reports | - |
+| `description` | Free text | - |
 | `runs_per_persona` | How many times to call each persona (different seeds) | 1 |
 | `max_turns` | Stop a call after this many agent turns | 16 |
 | `max_p95_latency_ms` | Latency budget for every call | 1200 |
-| `default_facts` | Facts every persona knows unless overridden | — |
+| `default_facts` | Facts every persona knows unless overridden | - |
 
 ## Persona fields
 

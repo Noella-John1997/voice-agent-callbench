@@ -1,6 +1,6 @@
-# `web/static/` — front-end files
+# `web/static/` - front-end files
 
-Plain HTML, CSS and JavaScript — no build step, no framework, no external CDN, so it loads fast and works offline.
+Plain HTML, CSS and JavaScript - no build step, no framework, no external CDN, so it loads fast and works offline.
 
 | File | Purpose |
 | --- | --- |

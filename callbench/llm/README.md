@@ -1,4 +1,4 @@
-# `llm/` — tiny LLM client
+# `llm/` - tiny LLM client
 
 `providers.py` has one class, `OpenAICompatibleLLM`, that calls any `/chat/completions` API
 (OpenAI, Azure OpenAI, Groq, a local vLLM or Ollama server…).

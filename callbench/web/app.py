@@ -123,7 +123,7 @@ def create_app(scenario_path: str | Path | None = None) -> FastAPI:
     def chat_turn(sid: str, req: ChatTurn):
         c = chats.get(sid)
         if not c:
-            raise HTTPException(404, "session expired — start a new call")
+            raise HTTPException(404, "session expired - start a new call")
         c["ts"] = time.time()
         heard = c["stt"].apply(req.text)
         turn = c["agent"].respond(heard)

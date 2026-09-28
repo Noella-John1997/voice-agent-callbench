@@ -1,6 +1,5 @@
 ---
 title: callbench
-emoji: 📞
 colorFrom: indigo
 colorTo: blue
 sdk: docker

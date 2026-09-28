@@ -38,7 +38,7 @@ function bubble(t) {
   return `<div class="bub ${t.speaker}"><div class="who">${who}</div>${esc(t.text)}${heard}${lat}</div>`;
 }
 function callCard(c, i) {
-  const checks = Object.entries(c.checks).map(([k, ok]) => `<span class="chip ${ok ? "ok" : "bad"}">${ok ? "✓" : "✕"} ${esc(k.replaceAll("_", " "))}</span>`).join("");
+  const checks = Object.entries(c.checks).map(([k, ok]) => `<span class="chip ${ok ? "ok" : "bad"}">${esc(k.replaceAll("_", " "))}</span>`).join("");
   const notes = c.notes.length ? `<div class="muted" style="font-size:13px;margin-bottom:8px">${esc(c.notes.join("; "))}</div>` : "";
   return `<details class="call" data-pass="${c.passed}"><summary>
       <span class="chip ${c.passed ? "ok" : "bad"}">${c.passed ? "PASS" : "FAIL"}</span>
@@ -102,7 +102,7 @@ function showTurn(heardAs, said, turn) {
   $("#captured").innerHTML = `<dt>Status</dt><dd>${done ? `<span class="chip ${turn.action === "hangup" && ex.job_title ? "ok" : "warn"}">${esc(turn.action)}</span>` : "in call"}</dd>` +
     ["employee_name", "start_date", "end_date", "job_title"].map((k) => `<dt>${k.replace("_", " ")}</dt><dd>${esc(ex[k] || "—")}</dd>`).join("");
   $("#say").disabled = $("#send").disabled = done;
-  if (done) { box.insertAdjacentHTML("beforeend", `<div class="muted" style="text-align:center;font-size:13px">Call ended — press Start call to try again.</div>`); sid = null; }
+  if (done) { box.insertAdjacentHTML("beforeend", `<div class="muted" style="text-align:center;font-size:13px">Call ended - press Start call to try again.</div>`); sid = null; }
 }
 $("#dial").onclick = async () => {
   $("#chatbox").innerHTML = "";

@@ -1,18 +1,18 @@
-# callbench — synthetic callers that test your voice AI agent
+# callbench - synthetic callers that test your voice AI agent
 
 ![python](https://img.shields.io/badge/python-3.10%2B-blue) ![tests](https://img.shields.io/badge/tests-pytest-green) ![license](https://img.shields.io/badge/license-MIT-lightgrey)
 
-**callbench** phones your voice agent with dozens of fake-but-realistic callers — an impatient
+**callbench** phones your voice agent with dozens of fake-but-realistic callers - an impatient
 person who interrupts, someone with a heavy accent on a bad line, a Spanish or Mandarin speaker,
-someone who code-switches in Hinglish, a voicemail box, a caller who demands a human — and
+someone who code-switches in Hinglish, a voicemail box, a caller who demands a human - and
 scores every call on **task success, latency, speech-to-text errors and correct escalation**.
 
-Think of it as **unit tests for phone agents**. Run it before every release, or in CI, and it
+It works like **unit tests for phone agents**. Run it before every release, or in CI, and it
 tells you "the new prompt broke Spanish calls" *before* a real customer finds out.
 
 ---
 
-## Why this exists (in simple words)
+## Why this exists
 
 Voice agents are hard to test. A developer usually rings the agent a few times, says the
 happy-path lines, and ships. Real callers are different:
@@ -33,11 +33,11 @@ that works like a real employment-verification bot. Running the suite on it
 ([sample report](examples/sample_report/)) gives **67% pass rate over 36 calls** and
 catches real bug classes:
 
-1. **Hinglish callers fail 100%** — the agent's parser only understands English phrasing.
-2. **Hinglish voicemail is not detected** — the agent talks to a voicemail box until it times out.
-3. **Heavy-accent callers get transferred** — STT turns "name" into "nine" and the regex misses it.
-4. **Barge-in breaks the flow** — after being interrupted the agent re-asks, the caller answers the wrong question.
-5. **Mandarin is the slowest language** — p95 latency is highest because of token count.
+1. **Hinglish callers fail 100%** - the agent's parser only understands English phrasing.
+2. **Hinglish voicemail is not detected** - the agent talks to a voicemail box until it times out.
+3. **Heavy-accent callers get transferred** - STT turns "name" into "nine" and the regex misses it.
+4. **Barge-in breaks the flow** - after being interrupted the agent re-asks, the caller answers the wrong question.
+5. **Mandarin is the slowest language** - p95 latency is highest because of token count.
 
 Each of these is a real problem seen in production voice agents. Finding them automatically is the point.
 
@@ -90,8 +90,8 @@ pytest -q
 callbench web            # open http://127.0.0.1:8000
 ```
 
-- **Test suite tab** — tick personas, change seed, runs, latency budget, extra line noise and interruptions, press *Run suite*. See KPI tiles, pass rate by persona and language, and every transcript with what STT *heard* in orange.
-- **Call the agent tab** — you are the caller. Type (or click a suggested line), turn up the line noise and watch the agent misunderstand you.
+- **Test suite tab** - tick personas, change seed, runs, latency budget, extra line noise and interruptions, press *Run suite*. See KPI tiles, pass rate by persona and language, and every transcript with what STT *heard* in orange.
+- **Call the agent tab** - you are the caller. Type (or click a suggested line), turn up the line noise and watch the agent misunderstand you.
 
 | Test suite (dark) | Call the agent | Phone |
 | --- | --- | --- |
@@ -163,12 +163,12 @@ See [`scenarios/`](scenarios/) for every field.
 
 ## Metrics explained
 
-- **Pass rate** — % of calls where every check passed.
-- **Outcome correct** — agent ended the call the right way (verified / transfer / voicemail drop / hangup).
-- **Fields correct** — every extracted value matches the caller's real facts.
-- **p50 / p95 latency** — typical and worst-5% delay between caller finishing and agent starting to speak. Humans notice > ~1 second.
-- **WER (word error rate)** — how badly simulated STT garbled the caller: (substitutions + deletions + insertions) ÷ words.
-- **No loop** — the call finished before `max_turns`.
+- **Pass rate** - % of calls where every check passed.
+- **Outcome correct** - agent ended the call the right way (verified / transfer / voicemail drop / hangup).
+- **Fields correct** - every extracted value matches the caller's real facts.
+- **p50 / p95 latency** - typical and worst-5% delay between caller finishing and agent starting to speak. Humans notice > ~1 second.
+- **WER (word error rate)** - how badly simulated STT garbled the caller: (substitutions + deletions + insertions) ÷ words.
+- **No loop** - the call finished before `max_turns`.
 
 ## Roadmap
 
@@ -182,4 +182,4 @@ Python 3.10+, FastAPI, httpx, PyYAML, pytest. Optional: any OpenAI-compatible LL
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).

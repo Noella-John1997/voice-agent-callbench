@@ -1,4 +1,4 @@
-# `callbench/` — the Python package
+# `callbench/` - the Python package
 
 This folder is the installable package. `pip install -e .` makes the `callbench` command available.
 
@@ -16,5 +16,5 @@ This folder is the installable package. `pip install -e .` makes the `callbench`
 | `llm/` | Small LLM client for LLM-played personas |
 | `telephony/` | Experimental real phone calls |
 
-**Data flow in one line:** `runner` asks a `persona` to speak → `noise` garbles it → `targets` agent replies →
+**Data flow:** `runner` asks a `persona` to speak → `noise` garbles it → `targets` agent replies →
 `metrics` scores the call → `report` writes the files.
