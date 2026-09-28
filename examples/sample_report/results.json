@@ -1,0 +1,3419 @@
+{
+  "title": "callbench · employment_verification",
+  "summary": {
+    "calls": 36,
+    "pass_rate": 0.667,
+    "latency_p50_ms": 911.8,
+    "latency_p95_ms": 1169.9,
+    "mean_wer": 0.019,
+    "barge_ins": 4,
+    "by_persona": {
+      "cooperative_hr": 1.0,
+      "heavy_accent_bad_line": 0.0,
+      "hinglish_hr": 0.0,
+      "impatient_interrupter": 0.333,
+      "kb_question_first": 1.0,
+      "mandarin_hr": 0.667,
+      "rambler": 1.0,
+      "refuses_to_share": 1.0,
+      "spanish_hr": 1.0,
+      "voicemail_en": 1.0,
+      "voicemail_hinglish": 0.0,
+      "wants_human": 1.0
+    },
+    "by_language": {
+      "en": 0.792,
+      "es": 1.0,
+      "hinglish": 0.0,
+      "zh": 0.667
+    },
+    "failed_checks": {
+      "outcome_correct": 11,
+      "fields_correct": 8,
+      "latency_ok": 3
+    }
+  },
+  "baseline_delta": null,
+  "calls": [
+    {
+      "scenario_id": "employment_verification",
+      "persona": "cooperative_hr",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 802.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 817.7,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 842.0,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Their job title was Senior Data Analyst.",
+          "heard_as": "Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 821.4,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Yes, that's right.",
+          "heard_as": "Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 758.5,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 817.7,
+      "latency_p95_ms": 842.0,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "cooperative_hr",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 771.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 875.2,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 953.7,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Their job title was Senior Data Analyst.",
+          "heard_as": "Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 858.4,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Yes, that's right.",
+          "heard_as": "Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 929.7,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 875.2,
+      "latency_p95_ms": 953.7,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "cooperative_hr",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 949.3,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 920.2,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 1038.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Their job title was Senior Data Analyst.",
+          "heard_as": "Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 872.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Yes, that's right.",
+          "heard_as": "Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 934.8,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 934.8,
+      "latency_p95_ms": 1038.1,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "impatient_interrupter",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 802.9,
+          "barge_in": true,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Yeah yeah, just get to the point. Sorry, what?",
+          "heard_as": "Yeah yeah, just get to the point. Sorry, what?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Sorry, I didn't catch that. Could you repeat the employee name?",
+          "heard_as": null,
+          "latency_ms": 840.8,
+          "barge_in": true,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Yeah yeah, just get to the point. Sorry, what?",
+          "heard_as": "Yeah yeah, just get to the point. Sorry, what?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 853.2,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "fields_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 840.8,
+      "latency_p95_ms": 853.2,
+      "wer": 0.0,
+      "passed": false,
+      "notes": [
+        "wrong/missing fields: employee_name, start_date, end_date, job_title"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "impatient_interrupter",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 771.8,
+          "barge_in": true,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Yeah yeah, just get to the point. Sorry, what?",
+          "heard_as": "Yeah yeah, just get to the point. Sorry, what?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Sorry, I didn't catch that. Could you repeat the employee name?",
+          "heard_as": null,
+          "latency_ms": 897.3,
+          "barge_in": true,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Yeah yeah, just get to the point. Sorry, what?",
+          "heard_as": "Yeah yeah, just get to the point. Sorry, what?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 968.0,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "fields_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 897.3,
+      "latency_p95_ms": 968.0,
+      "wer": 0.0,
+      "passed": false,
+      "notes": [
+        "wrong/missing fields: employee_name, start_date, end_date, job_title"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "impatient_interrupter",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 949.3,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 920.2,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 1038.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Their job title was Senior Data Analyst.",
+          "heard_as": "Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 872.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Yes, that's right.",
+          "heard_as": "Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 934.8,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 934.8,
+      "latency_p95_ms": 1038.1,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "heavy_accent_bad_line",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 1081.5,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Sorry, I didn't catch that. Could you repeat the employee name?",
+          "heard_as": null,
+          "latency_ms": 1128.0,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's nine is pria Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 1177.6,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "fields_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 1128.0,
+      "latency_p95_ms": 1177.6,
+      "wer": 0.2,
+      "passed": false,
+      "notes": [
+        "wrong/missing fields: employee_name, start_date, end_date, job_title"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "heavy_accent_bad_line",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 1024.6,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's nine is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Sorry, I didn't catch that. Could you repeat the employee name?",
+          "heard_as": null,
+          "latency_ms": 1169.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's nine is pria sharmer",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 1282.8,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "fields_correct": false,
+        "latency_ok": false,
+        "no_loop": true
+      },
+      "latency_p50_ms": 1169.9,
+      "latency_p95_ms": 1282.8,
+      "wer": 0.267,
+      "passed": false,
+      "notes": [
+        "wrong/missing fields: employee_name, start_date, end_date, job_title"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "heavy_accent_bad_line",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {
+        "employee_name": "pria Sharma"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 1257.7,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name is pria Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 1244.3,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here form March 2019 to jean 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Sorry, I didn't catch that. Could you repeat the dates?",
+          "heard_as": null,
+          "latency_ms": 1386.5,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here form much 2019 two June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 1115.6,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "fields_correct": false,
+        "latency_ok": false,
+        "no_loop": true
+      },
+      "latency_p50_ms": 1244.3,
+      "latency_p95_ms": 1386.5,
+      "wer": 0.231,
+      "passed": false,
+      "notes": [
+        "wrong/missing fields: employee_name, start_date, end_date, job_title"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "rambler",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 802.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, The employee's name is Priya Sharma.",
+          "heard_as": "Well, you know, it's been a long week, anyway, The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 856.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, They worked here from March 2019 to June 2023.",
+          "heard_as": "Well, you know, it's been a long week, anyway, They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 885.6,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, Their job title was Senior Data Analyst.",
+          "heard_as": "Well, you know, it's been a long week, anyway, Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 853.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, Yes, that's right.",
+          "heard_as": "Well, you know, it's been a long week, anyway, Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 798.3,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 853.1,
+      "latency_p95_ms": 885.6,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "rambler",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 771.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, The employee's name is Priya Sharma.",
+          "heard_as": "Well, you know, it's been a long week, anyway, The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 911.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, They worked here from March 2019 to June 2023.",
+          "heard_as": "Well, you know, it's been a long week, anyway, They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 996.0,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, Their job title was Senior Data Analyst.",
+          "heard_as": "Well, you know, it's been a long week, anyway, Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 892.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, Yes, that's right.",
+          "heard_as": "Well, you know, it's been a long week, anyway, Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 964.2,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 911.8,
+      "latency_p95_ms": 996.0,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "rambler",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 949.3,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, The employee's name is Priya Sharma.",
+          "heard_as": "Well, you know, it's been a long week, anyway, The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 961.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, They worked here from March 2019 to June 2023.",
+          "heard_as": "Well, you know, it's been a long week, anyway, They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 1081.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, Their job title was Senior Data Analyst.",
+          "heard_as": "Well, you know, it's been a long week, anyway, Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 904.4,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Well, you know, it's been a long week, anyway, Yes, that's right.",
+          "heard_as": "Well, you know, it's been a long week, anyway, Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 973.6,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 961.9,
+      "latency_p95_ms": 1081.9,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "wants_human",
+      "language": "en",
+      "expected": {
+        "outcome": "transfer",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 802.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Can I please speak to a real person?",
+          "heard_as": "Can I please speak to a real person?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 840.5,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 802.9,
+      "latency_p95_ms": 840.5,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "wants_human",
+      "language": "en",
+      "expected": {
+        "outcome": "transfer",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 771.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Can I please speak to a real person?",
+          "heard_as": "Can I please speak to a real person?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 897.2,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 771.8,
+      "latency_p95_ms": 897.2,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "wants_human",
+      "language": "en",
+      "expected": {
+        "outcome": "transfer",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 949.3,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Can I please speak to a real person?",
+          "heard_as": "Can I please speak to a real person?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 945.1,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 945.1,
+      "latency_p95_ms": 949.3,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "kb_question_first",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 802.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Wait, what company is this? Why are you calling?",
+          "heard_as": "Wait, what company is this? Why are you calling?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "I'm calling from Acme Verify, a background verification service. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 830.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 825.6,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 806.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Their job title was Senior Data Analyst.",
+          "heard_as": "Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 787.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 10,
+          "speaker": "caller",
+          "text": "Yes, that's right.",
+          "heard_as": "Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 11,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 866.3,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 806.1,
+      "latency_p95_ms": 866.3,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "kb_question_first",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 771.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Wait, what company is this? Why are you calling?",
+          "heard_as": "Wait, what company is this? Why are you calling?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "I'm calling from Acme Verify, a background verification service. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 887.4,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 937.2,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 845.6,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Their job title was Senior Data Analyst.",
+          "heard_as": "Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 961.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 10,
+          "speaker": "caller",
+          "text": "Yes, that's right.",
+          "heard_as": "Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 11,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 1028.9,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 887.4,
+      "latency_p95_ms": 1028.9,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "kb_question_first",
+      "language": "en",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Priya Sharma",
+        "start_date": "March 2019",
+        "end_date": "June 2023",
+        "job_title": "Senior Data Analyst"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 949.3,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Wait, what company is this? Why are you calling?",
+          "heard_as": "Wait, what company is this? Why are you calling?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "I'm calling from Acme Verify, a background verification service. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 934.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "The employee's name is Priya Sharma.",
+          "heard_as": "The employee's name is Priya Sharma.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Thanks. What were their employment dates?",
+          "heard_as": null,
+          "latency_ms": 1020.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "They worked here from March 2019 to June 2023.",
+          "heard_as": "They worked here from March 2019 to June 2023.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "Got it. What was their job title?",
+          "heard_as": null,
+          "latency_ms": 855.7,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Their job title was Senior Data Analyst.",
+          "heard_as": "Their job title was Senior Data Analyst.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "To confirm: Priya Sharma, from March 2019 to June 2023, as Senior Data Analyst. Is that correct?",
+          "heard_as": null,
+          "latency_ms": 968.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 10,
+          "speaker": "caller",
+          "text": "Yes, that's right.",
+          "heard_as": "Yes, that's right.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 11,
+          "speaker": "agent",
+          "text": "Thank you for your time. Have a great day, goodbye.",
+          "heard_as": null,
+          "latency_ms": 786.8,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 934.1,
+      "latency_p95_ms": 1020.9,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "refuses_to_share",
+      "language": "en",
+      "expected": {
+        "outcome": "hangup",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "hangup",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 802.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "I'm not comfortable sharing that. Please don't call again.",
+          "heard_as": "I'm not comfortable sharing that. Please don't call again.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "I understand. Thank you for your time, goodbye.",
+          "heard_as": null,
+          "latency_ms": 834.8,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 802.9,
+      "latency_p95_ms": 834.8,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "refuses_to_share",
+      "language": "en",
+      "expected": {
+        "outcome": "hangup",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "hangup",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 771.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "I'm not comfortable sharing that. Please don't call again.",
+          "heard_as": "I'm not comfortable sharing that. Please don't call again.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "I understand. Thank you for your time, goodbye.",
+          "heard_as": null,
+          "latency_ms": 891.3,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 771.8,
+      "latency_p95_ms": 891.3,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "refuses_to_share",
+      "language": "en",
+      "expected": {
+        "outcome": "hangup",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "hangup",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hello?",
+          "heard_as": "Hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 949.3,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "I'm not comfortable sharing that. Please don't call again.",
+          "heard_as": "I'm not comfortable sharing that. Please don't call again.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "I understand. Thank you for your time, goodbye.",
+          "heard_as": null,
+          "latency_ms": 938.6,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 938.6,
+      "latency_p95_ms": 949.3,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "voicemail_en",
+      "language": "en",
+      "expected": {
+        "outcome": "voicemail_drop",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "voicemail_drop",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hi, you've reached the HR desk. Please leave a message after the tone.",
+          "heard_as": "Hi, you've reached the HR desk. Please leave a message after the tone.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Acme Verify calling about an employment verification. Please call us back at 555-0100. Thank you.",
+          "heard_as": null,
+          "latency_ms": 844.7,
+          "barge_in": false,
+          "action": "voicemail_drop"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 844.7,
+      "latency_p95_ms": 844.7,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "voicemail_en",
+      "language": "en",
+      "expected": {
+        "outcome": "voicemail_drop",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "voicemail_drop",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hi, you've reached the HR desk. Please leave a message after the tone.",
+          "heard_as": "Hi, you've reached the HR desk. Please leave a message after the tone.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Acme Verify calling about an employment verification. Please call us back at 555-0100. Thank you.",
+          "heard_as": null,
+          "latency_ms": 809.9,
+          "barge_in": false,
+          "action": "voicemail_drop"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 809.9,
+      "latency_p95_ms": 809.9,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "voicemail_en",
+      "language": "en",
+      "expected": {
+        "outcome": "voicemail_drop",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "voicemail_drop",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Hi, you've reached the HR desk. Please leave a message after the tone.",
+          "heard_as": "Hi, you've reached the HR desk. Please leave a message after the tone.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Acme Verify calling about an employment verification. Please call us back at 555-0100. Thank you.",
+          "heard_as": null,
+          "latency_ms": 995.3,
+          "barge_in": false,
+          "action": "voicemail_drop"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 995.3,
+      "latency_p95_ms": 995.3,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "spanish_hr",
+      "language": "es",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Lucía Garcia",
+          "start_date": "enero 2020",
+          "end_date": "mayo 2024",
+          "job_title": "Ingeniera de Software"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Lucía Garcia",
+        "start_date": "enero 2020",
+        "end_date": "mayo 2024",
+        "job_title": "Ingeniera de Software"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "¿Hola?",
+          "heard_as": "¿Hola?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hola, soy Ava, asistente automática de Acme Verify, llamo para confirmar datos de empleo. ¿Cuál es el nombre del empleado?",
+          "heard_as": null,
+          "latency_ms": 800.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "El nombre del empleado es Lucía Garcia.",
+          "heard_as": "El nombre del empleado es Lucía Garcia.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Gracias. ¿Cuáles fueron las fechas de empleo?",
+          "heard_as": null,
+          "latency_ms": 824.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Trabajó aquí desde enero 2020 hasta mayo 2024.",
+          "heard_as": "Trabajó aquí desde enero 2020 hasta mayo 2024.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Entendido. ¿Cuál era su puesto?",
+          "heard_as": null,
+          "latency_ms": 833.4,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Su puesto era Ingeniera de Software.",
+          "heard_as": "Su puesto era Ingeniera de Software.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "Para confirmar: Lucía Garcia, desde enero 2020 hasta mayo 2024, como Ingeniera de Software. ¿Es correcto?",
+          "heard_as": null,
+          "latency_ms": 815.6,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Sí, es correcto.",
+          "heard_as": "Sí, es correcto.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Gracias por su tiempo. Adiós.",
+          "heard_as": null,
+          "latency_ms": 750.2,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 815.6,
+      "latency_p95_ms": 833.4,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "spanish_hr",
+      "language": "es",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Lucía Garcia",
+          "start_date": "enero 2020",
+          "end_date": "mayo 2024",
+          "job_title": "Ingeniera de Software"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Lucía Garcia",
+        "start_date": "enero 2020",
+        "end_date": "mayo 2024",
+        "job_title": "Ingeniera de Software"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "¿Hola?",
+          "heard_as": "¿Hola?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hola, soy Ava, asistente automática de Acme Verify, llamo para confirmar datos de empleo. ¿Cuál es el nombre del empleado?",
+          "heard_as": null,
+          "latency_ms": 770.0,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "El nombre del empleado es Lucía Garcia.",
+          "heard_as": "El nombre del empleado es Lucía Garcia.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Gracias. ¿Cuáles fueron las fechas de empleo?",
+          "heard_as": null,
+          "latency_ms": 881.2,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Trabajó aquí desde enero 2020 hasta mayo 2024.",
+          "heard_as": "Trabajó aquí desde enero 2020 hasta mayo 2024.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Entendido. ¿Cuál era su puesto?",
+          "heard_as": null,
+          "latency_ms": 944.2,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Su puesto era Ingeniera de Software.",
+          "heard_as": "Su puesto era Ingeniera de Software.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "Para confirmar: Lucía Garcia, desde enero 2020 hasta mayo 2024, como Ingeniera de Software. ¿Es correcto?",
+          "heard_as": null,
+          "latency_ms": 852.6,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Sí, es correcto.",
+          "heard_as": "Sí, es correcto.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Gracias por su tiempo. Adiós.",
+          "heard_as": null,
+          "latency_ms": 917.6,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 881.2,
+      "latency_p95_ms": 944.2,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "spanish_hr",
+      "language": "es",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Lucía Garcia",
+          "start_date": "enero 2020",
+          "end_date": "mayo 2024",
+          "job_title": "Ingeniera de Software"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "Lucía Garcia",
+        "start_date": "enero 2020",
+        "end_date": "mayo 2024",
+        "job_title": "Ingeniera de Software"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "¿Hola?",
+          "heard_as": "¿Hola?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hola, soy Ava, asistente automática de Acme Verify, llamo para confirmar datos de empleo. ¿Cuál es el nombre del empleado?",
+          "heard_as": null,
+          "latency_ms": 947.0,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "El nombre del empleado es Lucía Garcia.",
+          "heard_as": "El nombre del empleado es Lucía Garcia.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Gracias. ¿Cuáles fueron las fechas de empleo?",
+          "heard_as": null,
+          "latency_ms": 927.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Trabajó aquí desde enero 2020 hasta mayo 2024.",
+          "heard_as": "Trabajó aquí desde enero 2020 hasta mayo 2024.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Entendido. ¿Cuál era su puesto?",
+          "heard_as": null,
+          "latency_ms": 1027.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "Su puesto era Ingeniera de Software.",
+          "heard_as": "Su puesto era Ingeniera de Software.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "Para confirmar: Lucía Garcia, desde enero 2020 hasta mayo 2024, como Ingeniera de Software. ¿Es correcto?",
+          "heard_as": null,
+          "latency_ms": 866.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "Sí, es correcto.",
+          "heard_as": "Sí, es correcto.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "Gracias por su tiempo. Adiós.",
+          "heard_as": null,
+          "latency_ms": 922.8,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 927.1,
+      "latency_p95_ms": 1027.9,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "mandarin_hr",
+      "language": "zh",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "陈伟",
+          "start_date": "2018年1月",
+          "end_date": "2022年12月",
+          "job_title": "产品经理"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "陈伟",
+        "start_date": "2018年1月",
+        "end_date": "2022年12月",
+        "job_title": "产品经理"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "喂？",
+          "heard_as": "喂？",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "您好，我是 Acme Verify 的自动助理 Ava，来电确认雇佣信息。请问员工的名字是什么？",
+          "heard_as": null,
+          "latency_ms": 949.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "员工的名字是 陈伟。",
+          "heard_as": "员工的名字是 陈伟。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "谢谢。请问他的工作日期是什么时间？",
+          "heard_as": null,
+          "latency_ms": 971.0,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "他从 2018年1月 工作到 2022年12月。",
+          "heard_as": "他从 2018年1月 工作到 2022年12月。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "好的。请问他的职位是什么？",
+          "heard_as": null,
+          "latency_ms": 974.7,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "他的职位是 产品经理。",
+          "heard_as": "他的职位是 产品经理。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "确认一下：陈伟，从 2018年1月 到 2022年12月，职位 产品经理，对吗？",
+          "heard_as": null,
+          "latency_ms": 978.0,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "是的，没错。",
+          "heard_as": "是的，没错。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "感谢您的时间，再见。",
+          "heard_as": null,
+          "latency_ms": 884.9,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 971.0,
+      "latency_p95_ms": 978.0,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "mandarin_hr",
+      "language": "zh",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "陈伟",
+          "start_date": "2018年1月",
+          "end_date": "2022年12月",
+          "job_title": "产品经理"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "陈伟",
+        "start_date": "2018年1月",
+        "end_date": "2022年12月",
+        "job_title": "产品经理"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "喂？",
+          "heard_as": "喂？",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "您好，我是 Acme Verify 的自动助理 Ava，来电确认雇佣信息。请问员工的名字是什么？",
+          "heard_as": null,
+          "latency_ms": 900.6,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "员工的名字是 陈伟。",
+          "heard_as": "员工的名字是 陈伟。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "谢谢。请问他的工作日期是什么时间？",
+          "heard_as": null,
+          "latency_ms": 1027.6,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "他从 2018年1月 工作到 2022年12月。",
+          "heard_as": "他从 2018年1月 工作到 2022年12月。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "好的。请问他的职位是什么？",
+          "heard_as": null,
+          "latency_ms": 1131.0,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "他的职位是 产品经理。",
+          "heard_as": "他的职位是 产品经理。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "确认一下：陈伟，从 2018年1月 到 2022年12月，职位 产品经理，对吗？",
+          "heard_as": null,
+          "latency_ms": 998.9,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "是的，没错。",
+          "heard_as": "是的，没错。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "感谢您的时间，再见。",
+          "heard_as": null,
+          "latency_ms": 1118.0,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 1027.6,
+      "latency_p95_ms": 1131.0,
+      "wer": 0.0,
+      "passed": true,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "mandarin_hr",
+      "language": "zh",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "陈伟",
+          "start_date": "2018年1月",
+          "end_date": "2022年12月",
+          "job_title": "产品经理"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "verified",
+      "extracted": {
+        "employee_name": "陈伟",
+        "start_date": "2018年1月",
+        "end_date": "2022年12月",
+        "job_title": "产品经理"
+      },
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "喂？",
+          "heard_as": "喂？",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "您好，我是 Acme Verify 的自动助理 Ava，来电确认雇佣信息。请问员工的名字是什么？",
+          "heard_as": null,
+          "latency_ms": 1117.3,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "员工的名字是 陈伟。",
+          "heard_as": "员工的名字是 陈伟。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "谢谢。请问他的工作日期是什么时间？",
+          "heard_as": null,
+          "latency_ms": 1090.7,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "他从 2018年1月 工作到 2022年12月。",
+          "heard_as": "他从 2018年1月 工作到 2022年12月。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "好的。请问他的职位是什么？",
+          "heard_as": null,
+          "latency_ms": 1238.5,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 6,
+          "speaker": "caller",
+          "text": "他的职位是 产品经理。",
+          "heard_as": "他的职位是 产品经理。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 7,
+          "speaker": "agent",
+          "text": "确认一下：陈伟，从 2018年1月 到 2022年12月，职位 产品经理，对吗？",
+          "heard_as": null,
+          "latency_ms": 1044.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 8,
+          "speaker": "caller",
+          "text": "是的，没错。",
+          "heard_as": "是的，没错。",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 9,
+          "speaker": "agent",
+          "text": "感谢您的时间，再见。",
+          "heard_as": null,
+          "latency_ms": 1120.5,
+          "barge_in": false,
+          "action": "hangup"
+        }
+      ],
+      "checks": {
+        "outcome_correct": true,
+        "fields_correct": true,
+        "latency_ok": false,
+        "no_loop": true
+      },
+      "latency_p50_ms": 1117.3,
+      "latency_p95_ms": 1238.5,
+      "wer": 0.0,
+      "passed": false,
+      "notes": []
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "hinglish_hr",
+      "language": "hinglish",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Haan, hello?",
+          "heard_as": "Haan, hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 806.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Employee ka naam Priya Sharma hai.",
+          "heard_as": "Employee ka naam Priya Sharma hai.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Sorry, I didn't catch that. Could you repeat the employee name?",
+          "heard_as": null,
+          "latency_ms": 827.8,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Employee ka naam Priya Sharma hai.",
+          "heard_as": "Employee ka naam Priya Sharma hai.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 838.7,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "fields_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 827.8,
+      "latency_p95_ms": 838.7,
+      "wer": 0.0,
+      "passed": false,
+      "notes": [
+        "wrong/missing fields: employee_name, start_date, end_date, job_title"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "hinglish_hr",
+      "language": "hinglish",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Haan, hello?",
+          "heard_as": "Haan, hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 775.4,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Employee ka naam Priya Sharma hai.",
+          "heard_as": "Employee ka naam Priya Sharma hai.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Sorry, I didn't catch that. Could you repeat the employee name?",
+          "heard_as": null,
+          "latency_ms": 885.1,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Employee ka naam Priya Sharma hai.",
+          "heard_as": "Employee ka naam Priya Sharma hai.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 953.9,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "fields_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 885.1,
+      "latency_p95_ms": 953.9,
+      "wer": 0.0,
+      "passed": false,
+      "notes": [
+        "wrong/missing fields: employee_name, start_date, end_date, job_title"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "hinglish_hr",
+      "language": "hinglish",
+      "expected": {
+        "outcome": "verified",
+        "fields": {
+          "employee_name": "Priya Sharma",
+          "start_date": "March 2019",
+          "end_date": "June 2023",
+          "job_title": "Senior Data Analyst"
+        },
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "transfer",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Haan, hello?",
+          "heard_as": "Haan, hello?",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 953.7,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 2,
+          "speaker": "caller",
+          "text": "Employee ka naam Priya Sharma hai.",
+          "heard_as": "Employee ka naam Priya Sharma hai.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 3,
+          "speaker": "agent",
+          "text": "Sorry, I didn't catch that. Could you repeat the employee name?",
+          "heard_as": null,
+          "latency_ms": 931.4,
+          "barge_in": false,
+          "action": "continue"
+        },
+        {
+          "index": 4,
+          "speaker": "caller",
+          "text": "Employee ka naam Priya Sharma hai.",
+          "heard_as": "Employee ka naam Priya Sharma hai.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 5,
+          "speaker": "agent",
+          "text": "Of course, let me transfer you to a member of our team now.",
+          "heard_as": null,
+          "latency_ms": 1039.6,
+          "barge_in": false,
+          "action": "transfer"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "fields_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 953.7,
+      "latency_p95_ms": 1039.6,
+      "wer": 0.0,
+      "passed": false,
+      "notes": [
+        "wrong/missing fields: employee_name, start_date, end_date, job_title"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "voicemail_hinglish",
+      "language": "hinglish",
+      "expected": {
+        "outcome": "voicemail_drop",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "no_resolution",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Aapne HR desk ko call kiya hai. Beep ke baad message chhodiye.",
+          "heard_as": "Aapne HR desk ko call kiya hai. Beep ke baad message chhodiye.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 846.6,
+          "barge_in": false,
+          "action": "continue"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 846.6,
+      "latency_p95_ms": 846.6,
+      "wer": 0.0,
+      "passed": false,
+      "notes": [
+        "caller went silent"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "voicemail_hinglish",
+      "language": "hinglish",
+      "expected": {
+        "outcome": "voicemail_drop",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "no_resolution",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Aapne HR desk ko call kiya hai. Beep ke baad message chhodiye.",
+          "heard_as": "Aapne HR desk ko call kiya hai. Beep ke baad message chhodiye.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 811.5,
+          "barge_in": false,
+          "action": "continue"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 811.5,
+      "latency_p95_ms": 811.5,
+      "wer": 0.0,
+      "passed": false,
+      "notes": [
+        "caller went silent"
+      ]
+    },
+    {
+      "scenario_id": "employment_verification",
+      "persona": "voicemail_hinglish",
+      "language": "hinglish",
+      "expected": {
+        "outcome": "voicemail_drop",
+        "fields": {},
+        "max_p95_latency_ms": 1200
+      },
+      "actual_outcome": "no_resolution",
+      "extracted": {},
+      "transcript": [
+        {
+          "index": 0,
+          "speaker": "caller",
+          "text": "Aapne HR desk ko call kiya hai. Beep ke baad message chhodiye.",
+          "heard_as": "Aapne HR desk ko call kiya hai. Beep ke baad message chhodiye.",
+          "latency_ms": null,
+          "barge_in": false,
+          "action": null
+        },
+        {
+          "index": 1,
+          "speaker": "agent",
+          "text": "Hi, this is Ava, an automated assistant from Acme Verify calling to confirm employment details. What is the employee's full name?",
+          "heard_as": null,
+          "latency_ms": 997.7,
+          "barge_in": false,
+          "action": "continue"
+        }
+      ],
+      "checks": {
+        "outcome_correct": false,
+        "latency_ok": true,
+        "no_loop": true
+      },
+      "latency_p50_ms": 997.7,
+      "latency_p95_ms": 997.7,
+      "wer": 0.0,
+      "passed": false,
+      "notes": [
+        "caller went silent"
+      ]
+    }
+  ]
+}

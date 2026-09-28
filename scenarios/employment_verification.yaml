@@ -1,0 +1,72 @@
+# Employment-verification call suite.
+# Each persona is one kind of real-world caller. `expect` says what a good
+# agent should end up doing on that call.
+id: employment_verification
+description: Outbound employment verification calls across 10 caller types and 4 languages
+runs_per_persona: 3        # each persona is called 3 times with different random seeds
+max_turns: 16
+max_p95_latency_ms: 1200   # humans notice pauses above ~1 second
+
+default_facts:
+  employee_name: Priya Sharma
+  start_date: March 2019
+  end_date: June 2023
+  job_title: Senior Data Analyst
+
+personas:
+  - name: cooperative_hr
+    style: cooperative
+    expect: { outcome: verified, fields: [employee_name, start_date, end_date, job_title] }
+
+  - name: impatient_interrupter
+    style: impatient
+    interrupt_prob: 0.4
+    expect: { outcome: verified, fields: [employee_name, start_date, end_date, job_title] }
+
+  - name: heavy_accent_bad_line
+    style: cooperative
+    accent_noise: 0.8
+    expect: { outcome: verified, fields: [employee_name, start_date, end_date, job_title] }
+
+  - name: rambler
+    style: rambler
+    expect: { outcome: verified, fields: [employee_name, start_date, end_date, job_title] }
+
+  - name: wants_human
+    style: asks_human
+    expect: { outcome: transfer }
+
+  - name: kb_question_first
+    style: kb_question
+    kb_question: Wait, what company is this? Why are you calling?
+    expect: { outcome: verified, fields: [employee_name, start_date, end_date, job_title] }
+
+  - name: refuses_to_share
+    style: refuses
+    expect: { outcome: hangup }
+
+  - name: voicemail_en
+    style: voicemail
+    expect: { outcome: voicemail_drop }
+
+  - name: spanish_hr
+    language: es
+    style: cooperative
+    facts: { employee_name: Lucía Garcia, start_date: enero 2020, end_date: mayo 2024, job_title: Ingeniera de Software }
+    expect: { outcome: verified, fields: [employee_name, start_date, end_date, job_title] }
+
+  - name: mandarin_hr
+    language: zh
+    style: cooperative
+    facts: { employee_name: 陈伟, start_date: 2018年1月, end_date: 2022年12月, job_title: 产品经理 }
+    expect: { outcome: verified, fields: [employee_name, start_date, end_date, job_title] }
+
+  - name: hinglish_hr
+    language: hinglish
+    style: cooperative
+    expect: { outcome: verified, fields: [employee_name, start_date, end_date, job_title] }
+
+  - name: voicemail_hinglish
+    language: hinglish
+    style: voicemail
+    expect: { outcome: voicemail_drop }
