@@ -41,6 +41,12 @@ def cmd_serve_demo(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_web(args: argparse.Namespace) -> int:
+    from .web.app import run
+    run(args.host, args.port)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="callbench", description="Synthetic-caller tests for voice agents")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -59,6 +65,11 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--host", default="127.0.0.1")
     s.add_argument("--port", type=int, default=8080)
     s.set_defaults(func=cmd_serve_demo)
+
+    w = sub.add_parser("web", help="open the web dashboard")
+    w.add_argument("--host", default="127.0.0.1")
+    w.add_argument("--port", type=int, default=int(__import__("os").getenv("PORT", "8000")))
+    w.set_defaults(func=cmd_web)
 
     args = p.parse_args(argv)
     return args.func(args)

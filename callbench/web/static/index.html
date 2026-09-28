@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>callbench · voice agent test lab</title>
+<link rel="stylesheet" href="/static/base.css">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand"><div class="mark">☎</div><div>callbench <small>voice agent test lab</small></div></div>
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-tab="suite">Test suite</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="chat">Call the agent</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<section id="suite">
+  <div class="hero">
+    <h1>Stress-test a voice agent with synthetic callers</h1>
+    <p>Pick caller personas — impatient, heavy accent, Spanish, Mandarin, Hinglish, voicemail — and run them against the demo employment-verification agent. Every call is scored on outcome, extracted fields, latency and loops.</p>
+  </div>
+  <div class="grid">
+    <aside class="card stack">
+      <div class="row" style="justify-content:space-between"><h2 style="margin:0">Personas</h2>
+        <div class="row"><button class="btn sm" id="all">All</button><button class="btn sm" id="none">None</button></div></div>
+      <div class="plist" id="plist"></div>
+      <h3>Settings</h3>
+      <label class="field">Runs per persona <span class="v" id="runsV">3</span><input type="range" id="runs" min="1" max="5" value="3"></label>
+      <label class="field">Latency budget (p95) <span class="v" id="budgetV">1200 ms</span><input type="range" id="budget" min="600" max="2000" step="50" value="1200"></label>
+      <label class="field">Extra line noise <span class="v" id="noiseV">0.00</span><input type="range" id="noise" min="0" max="1" step="0.05" value="0"></label>
+      <label class="field">Extra interruptions <span class="v" id="intsV">0.00</span><input type="range" id="ints" min="0" max="1" step="0.05" value="0"></label>
+      <label class="field">Random seed<input type="number" id="seed" value="7"></label>
+      <button class="btn primary block" id="run">Run suite</button>
+      <div class="muted" style="font-size:12px" id="runinfo"></div>
+    </aside>
+    <div class="results" id="results">
+      <div class="empty">Choose personas and press <b>Run suite</b>. A full run of 36 calls takes well under a second.</div>
+    </div>
+  </div>
+</section>
+
+<section id="chat" hidden>
+  <div class="hero">
+    <h1>Be the caller</h1>
+    <p>Talk to the demo agent the way a real caller would. Turn up the line noise to see how speech-to-text mistakes (orange) break the agent's understanding.</p>
+  </div>
+  <div class="grid">
+    <aside class="card stack">
+      <h2>Call setup</h2>
+      <label class="field">You answer the phone with
+        <select id="opening">
+          <option>Hello?</option><option>¿Hola?</option><option>喂？</option>
+          <option>Hi, you've reached the HR desk. Please leave a message after the tone.</option>
+        </select></label>
+      <label class="field">Line noise <span class="v" id="cnoiseV">0.00</span><input type="range" id="cnoise" min="0" max="1" step="0.05" value="0"></label>
+      <button class="btn primary block" id="dial">Start call</button>
+      <h3>What the agent has captured</h3>
+      <dl class="kv" id="captured"><dt>Status</dt><dd>—</dd></dl>
+      <h3>Try saying</h3>
+      <div class="row" id="quick"></div>
+    </aside>
+    <div class="card">
+      <div class="chatbox bubbles" id="chatbox"><div class="empty" style="margin:auto">Press <b>Start call</b> — the agent will speak first.</div></div>
+      <form class="composer" id="composer"><input type="text" id="say" placeholder="Type what you say…" autocomplete="off" disabled><button class="btn primary" id="send" disabled>Say</button></form>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">callbench · open source · all data is synthetic · <a href="/docs">API docs</a></div></footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

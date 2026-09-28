@@ -1,0 +1,9 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+# In Render: New + -> Blueprint -> pick this GitHub repo -> Apply.
+services:
+  - type: web
+    name: voice-agent-callbench
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true

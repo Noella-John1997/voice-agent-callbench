@@ -21,3 +21,6 @@ callbench = "callbench.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["callbench*"]
+
+[tool.setuptools.package-data]
+callbench = ["web/static/*"]

@@ -82,6 +82,24 @@ Run the tests:
 pytest -q
 ```
 
+## Web app
+
+![callbench dashboard](docs/screenshots/desktop-light.png)
+
+```bash
+callbench web            # open http://127.0.0.1:8000
+```
+
+- **Test suite tab** — tick personas, change seed, runs, latency budget, extra line noise and interruptions, press *Run suite*. See KPI tiles, pass rate by persona and language, and every transcript with what STT *heard* in orange.
+- **Call the agent tab** — you are the caller. Type (or click a suggested line), turn up the line noise and watch the agent misunderstand you.
+
+| Test suite (dark) | Call the agent | Phone |
+| --- | --- | --- |
+| ![](docs/screenshots/desktop-dark.png) | ![](docs/screenshots/call-the-agent.png) | ![](docs/screenshots/mobile.png) |
+
+**Put it online for free** (Render or Hugging Face Spaces): see [`deploy/`](deploy/). Then add the live link here:
+`Live demo: https://voice-agent-callbench.onrender.com` *(replace with your URL)*
+
 ## Test your own agent
 
 Your agent only needs to expose two HTTP endpoints (details in
@@ -103,6 +121,7 @@ callbench run scenarios/employment_verification.yaml --target http://127.0.0.1:8
 
 | Command | What it does |
 | --- | --- |
+| `callbench web` | Web dashboard at http://127.0.0.1:8000 |
 | `callbench run FILE --seed 42` | Different random seed = different noise and timing |
 | `callbench run FILE --fail-under 0.8` | Exit code 1 if pass rate < 80% (use in CI) |
 | `callbench run FILE --baseline old/results.json` | Show change vs. an earlier run |
@@ -135,6 +154,9 @@ See [`scenarios/`](scenarios/) for every field.
 | [`callbench/report/`](callbench/report/) | HTML + JSON report writer |
 | [`callbench/llm/`](callbench/llm/) | Minimal OpenAI-compatible client |
 | [`callbench/telephony/`](callbench/telephony/) | Experimental real-call mode (Twilio) |
+| [`callbench/web/`](callbench/web/) | Web dashboard (FastAPI + plain HTML/JS) |
+| [`deploy/`](deploy/) | Free hosting guides (Render, Hugging Face, Docker) |
+| [`docs/`](docs/) | Screenshots |
 | [`scenarios/`](scenarios/) | Test suites in YAML |
 | [`tests/`](tests/) | pytest unit + integration tests |
 | [`examples/`](examples/) | A sample report you can open without running anything |

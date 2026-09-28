@@ -14,4 +14,5 @@ pytest -q
 | `test_simulator.py` | Whole calls: cooperative passes, Hinglish voicemail is caught as a failure, latency gate works |
 | `test_http_target.py` | The HTTP contract works end to end with the FastAPI demo server |
 | `test_cli.py` | CLI writes reports, `--fail-under` returns exit code 1, `--baseline` diff works |
+| `test_web.py` | Web API: page and static files load, personas listed, subset runs, limits enforced, live chat flow |
 | `conftest.py` | Shared paths for tests |

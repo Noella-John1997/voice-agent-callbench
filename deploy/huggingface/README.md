@@ -1,0 +1,17 @@
+---
+title: callbench
+emoji: 📞
+colorFrom: indigo
+colorTo: blue
+sdk: docker
+app_port: 8000
+pinned: false
+license: mit
+---
+
+# callbench
+
+This file is the **Hugging Face Space version** of the README. Spaces read the YAML header above
+to know this is a Docker app listening on port 8000. See `deploy/README.md` for how it's used.
+
+Source code and full documentation: https://github.com/Noella-John1997/voice-agent-callbench
